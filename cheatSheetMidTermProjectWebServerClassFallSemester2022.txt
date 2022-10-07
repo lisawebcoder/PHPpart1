@@ -1,0 +1,16 @@
+#REVISION HISTORY SECTION starts
+DEVELOPER                DATE(yr/mm/day/                 COMMENTS
+roberto(2134668)      2022-10-07              create a mid term project called 2134668 commit#1
+#REVISION HISTORY SECTION ends
+
+
+
+Oct.7th 2022
+--i created this txt file directly in netbeans ide
+--not sure if it has a .txt extension as netbeans is a little confusing for me
+--today i will simply create the project and cheat sheet and commit it to a Git repo
+--once all is done i will write here its done for the day
+-- i added the txt extension directly in win explorer for this file
+-i also added a commentsindex.txt file 
+-and i just wrote 1 line of code: 'hello testing'
+-3pm im done at this point and i will initialize and commit 1st entry to git
