@@ -5,6 +5,10 @@
 #roberto(2134668)      2022-10-08              see cheatSheet for many steps did from 10 to 1130am commit#2
 #REVISION HISTORY SECTION ends
 
+
+
+
+
 #7th step
 #I DONT KNOW IF IT GOES HERE IM SO CONFUSED--seems ok it outputs when i change
 //1) put your code here for the network header; B4 HTML
@@ -15,25 +19,15 @@ header('Content-Type:text/html; charset=UTF-8');
 
 
 
-#6th step
-//we put the html code in the fucntions file
-#--define functions file and folder constants
+#Step 2 --define functions file and folder constants
 define("FOLDER_PHPFUNCTIONS","commonFunctions/");
 define ("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS ."PHPFunctions.php");
 
-#- call functions w/ reuqire once
+#step 3-- call functions w/ reuqire once
 require_once FILE_PHPFUNCTIONS;
 
 
-topPage("index page");
-echo "test the real website is on brwoser index page";
-         //1st comment
-        //intial test block entry
-        echo "hello testing  output";
-        echo"<br>";
+topPage("about page");
+echo "test the real website is on brwoser about page";
 bottomPage();
-        
-        
-        
 
-   

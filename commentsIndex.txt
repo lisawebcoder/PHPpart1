@@ -1,10 +1,27 @@
 #REVISION HISTORY SECTION starts
-DEVELOPER                DATE(yr/mm/day/                 COMMENTS
-roberto(2134668)      2022-10-07              create a mid term project called 2134668 commit#1
+#DEVELOPER             DATE(yr/mm/day/                 COMMENTS
+#roberto(2134668)      2022-10-07              create a mid term project called 2134668 commit#1
+#roberto(2134668)      2022-10-08              see cheatSheet for many steps did from 10 to 1130am commit#2
 #REVISION HISTORY SECTION ends
 
 Oct 7th 2022
-1st comment--12 noon
+1st comment--index.php--12 noon
 i am simply echo testing to see if the project 
 and files are well connected to the local server
 and display in the browser
+
+Oct 8th 2022
+2nd comment --about.php--1045am
+--created file and folder constants
+
+3rd comment --about.php
+call the functions file
+
+4th and 5th comment --phpFunctions.php
+created the top and bottom page functions
+
+6th comment--index.php/about.php/products.php
+we put the constants for functions and rquire the functions
+
+7th comment--index.php/about.php/products.php
+added the network response header
