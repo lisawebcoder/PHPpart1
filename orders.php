@@ -3,6 +3,7 @@
 #DEVELOPER             DATE(yr/mm/day/                 COMMENTS
 #roberto(2134668)      2022-10-07              create a mid term project called 2134668 commit#1
 #roberto(2134668)      2022-10-08              see cheatSheet for many steps did from 10 to 1130am commit#2
+#robert(2134668)       2022-10-9               see commentsIndex and cheatsheet--i have basic form and css and pics working
 #REVISION HISTORY SECTION ends
 
 
@@ -22,8 +23,18 @@ define ("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS ."PHPFunctions.php");
 #step 3-- call functions w/ reuqire once
 require_once FILE_PHPFUNCTIONS;
 
+#4th comment--add functions call
+topPage("orders page");
+echo "test the orders page runs in browser ";
 
-topPage("products page");
-echo "test the real website is on brwoser products page";
+#12th comment D contd
+//call the function
+orderPage();
+
+
+#5th comment--add functions call
 bottomPage();
+
+#comment 9 --function test call
+test(" ordersPageFunctionTest ");
 

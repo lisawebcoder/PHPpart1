@@ -2,6 +2,7 @@
 #DEVELOPER             DATE(yr/mm/day/                 COMMENTS
 #roberto(2134668)      2022-10-07              create a mid term project called 2134668 commit#1
 #roberto(2134668)      2022-10-08              see cheatSheet for many steps did from 10 to 1130am commit#2
+#robert(2134668)       2022-10-9               see commentsIndex and cheatsheet--i have basic form and css and pics working
 #REVISION HISTORY SECTION ends
 
 
@@ -26,3 +27,17 @@ Oct 8th 2022--10:15 start
 --added response network header and ver top under php tag in index/about/products pages
 - im done at this point and i will initialize and commit 2nd entry to git
 Oct 8th 2022--11:30 end
+
+oct 9th 2022--630am start
+--remove comment block 1
+--modified comment 4 and 5
+--change about and products pages to orders and buying
+--change titles to home, buying and orders
+--modified basic output welcome messages on each page
+--use these as guides
+https://www.w3schools.com/html/
+https://www.phptutorial.net/
+https://www.w3schools.com/php/
+--testing func calls but doesnt work w/ params or args why?i fixed it
+must use the param in the func as a parm in echo in fucntions file
+and then call the func w/ an arg in each seperate page

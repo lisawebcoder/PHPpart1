@@ -2,6 +2,7 @@
 #DEVELOPER             DATE(yr/mm/day/                 COMMENTS
 #roberto(2134668)      2022-10-07              create a mid term project called 2134668 commit#1
 #roberto(2134668)      2022-10-08              see cheatSheet for many steps did from 10 to 1130am commit#2
+#robert(2134668)       2022-10-9               see commentsIndex and cheatsheet--i have basic form and css and pics working
 #REVISION HISTORY SECTION ends
 
 Oct 7th 2022
@@ -17,11 +18,34 @@ Oct 8th 2022
 3rd comment --about.php
 call the functions file
 
-4th and 5th comment --phpFunctions.php
-created the top and bottom page functions
+4th and 5th comment --phpFunctions.php/index/products/about
+created the top and bottom page functions and added func calls
 
 6th comment--index.php/about.php/products.php
 we put the constants for functions and rquire the functions
 
 7th comment--index.php/about.php/products.php
 added the network response header
+
+
+oct 9th 2022
+8th comment --index.php
+remove code from comment 1 cuz its just test code
+9th comment-- index/buying/orders
+i testing func calls 
+10th comment --index/buying/orders
+--code from fucntions project works; it calls funcs from phpfunctions
+11th comment --index
+why i dont get error if i gave a float but its checking if false is an int?
+
+12th comment --phpfucntions.php/order/buying
+create the buyingpage and order page function
+
+13th comment --phpfunctions
+add define and constants for css and pics folders
+
+14th comment --phpfunctions
+trying to add favicon but not sure
+
+15th comment --phpfunction
+i add form code for buying page; still testing only
