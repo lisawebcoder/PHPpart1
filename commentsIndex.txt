@@ -49,3 +49,13 @@ trying to add favicon but not sure
 
 15th comment --phpfunction
 i add form code for buying page; still testing only
+
+
+oct 15th 2022--start 3pm
+comment ---phpfuction
+i just added some spacers to read the code better in comment 9 and 10
+
+16th comment --phpfucntions
+i put switch block for 1 css file that 
+changes colors for each page background
+using a class not a constant --very confusing--

@@ -41,3 +41,7 @@ https://www.w3schools.com/php/
 --testing func calls but doesnt work w/ params or args why?i fixed it
 must use the param in the func as a parm in echo in fucntions file
 and then call the func w/ an arg in each seperate page
+
+
+oct 15th 2022
+--phpfucntions--i put css switch case for the differnt colors background

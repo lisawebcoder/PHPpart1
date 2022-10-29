@@ -35,7 +35,11 @@ echo "test the home page of the products website runs in browser ";
        
 #12th comment C contd
 //call the function
-homePage();
+?>
+<!-- this is unique html to home page-->
+<p class="home"> home page </p> 
+
+<?php
 
 
 
