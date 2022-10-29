@@ -18,7 +18,7 @@ define("FILE_LOGO", FOLDER_PHPPICS . "palmTreeLogo.jpg"); //21/10/2022
 //1st Main function top--start
 function topPage($title)
 {
-    ?><!DOCTYPE html>
+?><!DOCTYPE html>
 
     <html>
         <head>
@@ -32,7 +32,7 @@ function topPage($title)
     <?php
     #oct 14th 2022 --start
     #comment 16
-    /**/
+    /*
       switch($title)
       {
       case "home page":
@@ -49,8 +49,12 @@ function topPage($title)
 
       default:
       echo "<body class='home'>This is a text in homepage PHP </body>";
-      } 
+      } */
     ?>
+            
+            
+            
+            
 
             <!-- oct 14th 2022 end-->
 
@@ -60,17 +64,28 @@ function topPage($title)
 
 
         </head>
-        <!--21/10/2022--THIS IS 3 STYLE  CLASSES--what is this for?is it the get mode in url?>
-        <body class="<?php
+        <body class="main">
+        <!--21/10/2022--THIS IS 3 STYLE  CLASSES
+        --what is this for?is it the get mode in url?
+        --i dont underatnd this code that techer did 
+        --w/ me and it doesn t even work--i comment out php and html
+        -->
+        <!--body class="<?php/*
         echo "garbage";
         if(isset($_GET["mode"]) &&
-        strtoupper(htmlspecialchars($_GET["mode"]) == strtoupper("print")))
+        strtoupper(htmlspecialchars($_GET["mode"]) == strtoupper("print")))        
+        {
          echo "whiteBackground";
-        else{
-          echo "redBackground";  
+         //echo "<body class='whiteBackground'>This is a text in orderpage PHP</body>";
         }
-        
-               ?>">  
+        else
+        {
+         echo "redBackground";
+         //echo "<body class='redBackground'>This is a text in orderpage PHP</body>";
+          
+        }
+        */
+       ?>"-->  
 
     <?php
     }
@@ -109,12 +124,14 @@ function topPage($title)
 //12th step A--buying ends
 //12th step B--order
 //4th Main function top--start
-        function orderPage() {
-            ?>
+        function orderPage() 
+ {
+    ?>
 
             <p> order page </p> 
-
-    <?php
+            <?php echo "test from orders page on oct 29th 2022; 720am"; ?>
+           
+   <?php
 }
 
 //4th Main function bottom--end
