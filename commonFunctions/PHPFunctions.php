@@ -4,7 +4,7 @@
 #roberto(2134668)      2022-10-07              create a mid term project called 2134668 commit#1
 #roberto(2134668)      2022-10-08              see cheatSheet for many steps did from 10 to 1130am commit#2
 #robert(2134668)       2022-10-9               see commentsIndex and cheatsheet--i have basic form and css and pics working
-#robert(2134668)       2022-10-29--630am       i added back switch for 3 colors for 3 pages
+#robert(2134668)       2022-10-29--630am       i added back switch for 3 colors for 3 pages--cntrl + F5 helps me get output i wanted--
 ##REVISION HISTORY SECTION ends
 #13th step
 //define constants
