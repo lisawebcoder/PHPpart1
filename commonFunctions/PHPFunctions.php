@@ -6,6 +6,10 @@
 #robert(2134668)       2022-10-9               see commentsIndex and cheatsheet--i have basic form and css and pics working
 #robert(2134668)       2022-10-29--630am       i added back switch for 3 colors for 3 pages--cntrl + F5 helps me get output i wanted--
 ##REVISION HISTORY SECTION ends
+//Report all errors except warnings.--oct28th2022
+error_reporting(E_ALL ^ E_WARNING);
+//Only report fatal errors and parse errors.--oct28th2022
+error_reporting(E_ERROR | E_PARSE);
 #13th step
 //define constants
 define("FOLDER_PHPSTYLES", "CSS/");
@@ -57,6 +61,38 @@ function topPage($title)
             
 
             <!-- oct 14th 2022 end-->
+            <!--oct 30th 2022-->
+<!--styles from lenovo start styles from Lenovo -->
+<style>
+/* for some reason my code in the styles doesnt display so i have to out here */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+</style>
+
+<!--styles from lenovo styles from Lenovo end-->
+<!--oct 30th 2022-->
+
 
 
 
