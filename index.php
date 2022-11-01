@@ -4,6 +4,7 @@
 #roberto(2134668)      2022-10-07              create a mid term project called 2134668 commit#1
 #roberto(2134668)      2022-10-08              see cheatSheet for many steps did from 10 to 1130am commit#2
 #robert(2134668)       2022-10-9               see commentsIndex and cheatsheet--i have basic form and css and pics working
+#robert(2134668)       2022-10-31Halloween     i added some pictures rotate html/php code
 #REVISION HISTORY SECTION ends
 
 #7th step
@@ -27,7 +28,19 @@ require_once FILE_PHPFUNCTIONS;
 
 #4th comment--add functions call
 topPage("home page");
-echo "test the home page of the products website runs in browser ";
+//i copy the pic code here--halloween 2022
+$pictures = array(FILE_PEPSI, FILE_COKE, FILE_7UP);
+shuffle($pictures);
+?>
+<!-- halloween 2022 i put html pic code here-->
+<img src="<?php echo FILE_REDCAR; ?>"alt="red car" />
+<img class="softdrink" src="<?php echo $pictures[0]; ?>" alt=" Adverts"/>
+
+
+
+<?php
+echo "<br>";
+echo "refresh the page to see new advert products in browser ";
          #1st comment
         //intial test block entry
        #8th comment
@@ -49,7 +62,7 @@ bottomPage();
 
 
 #comment 9 --function test call
-test(" homePageFunctionTest");
+test(" CompanyLogo!!");
         
 
 

@@ -5,7 +5,8 @@
 #roberto(2134668)      2022-10-08              see cheatSheet for many steps did from 10 to 1130am commit#2
 #robert(2134668)       2022-10-9               see commentsIndex and cheatsheet--i have basic form and css and pics working
 #robert(2134668)       2022-10-29--630am       i added back switch for 3 colors for 3 pages--cntrl + F5 helps me get output i wanted--
-##REVISION HISTORY SECTION ends
+#robert(2134668)       2022-10-31Halloween     i added constants php code
+#REVISION HISTORY SECTION ends
 //Report all errors except warnings.--oct28th2022
 error_reporting(E_ALL ^ E_WARNING);
 //Only report fatal errors and parse errors.--oct28th2022
@@ -15,6 +16,11 @@ error_reporting(E_ERROR | E_PARSE);
 define("FOLDER_PHPSTYLES", "CSS/");
 define("FILE_PHPSTYLES", FOLDER_PHPSTYLES . "stylesheet.css");
 define("FOLDER_PHPPICS", "Pics/");
+//i cut this from pictures.php--halloween 2022--
+define("FILE_REDCAR", FOLDER_PHPPICS . "redcar.png");
+define("FILE_PEPSI", FOLDER_PHPPICS . "pepsi.png");
+define("FILE_COKE", FOLDER_PHPPICS . "coke.png");
+define("FILE_7UP", FOLDER_PHPPICS . "7up.png");
 define("FILE_PHPPICS", FOLDER_PHPPICS . "favicon.ico");
 define("FILE_LOGO", FOLDER_PHPPICS . "palmTreeLogo.jpg"); //21/10/2022
 
@@ -101,6 +107,19 @@ li a:hover {
 
         </head>
         <body class="main">
+      <!--oct 30th 2022 input-->
+<ul>
+  <li><a class="active" href="index.php" target="_blank">Home</a></li>
+  <li><a href="buying.php" target="_blank">BuyBooks</a></li>
+  <li><a href="orders.php" target="_blank">Orders</a></li>
+  <li><a href="approval.php" target="_blank">Approval</a></li>
+  <li><a href="https://thefriendsnetwork.ca" target="_blank">About</a></li>
+</ul>   
+   <!--oct 30th 2022 input-->          
+            
+            
+            
+            
         <!--21/10/2022--THIS IS 3 STYLE  CLASSES
         --what is this for?is it the get mode in url?
         --i dont underatnd this code that techer did 
@@ -192,7 +211,7 @@ function bottomPage() {
         function test($testpages) {
             echo "<br>--------------";
             echo "<br>";
-            echo "fucntion test $testpages in fucntions file";
+            echo "Hope you lke our $testpages from fucntions file";
             echo "<br>--------------";
             echo "<br>";
         }

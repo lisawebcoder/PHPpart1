@@ -281,4 +281,18 @@ li a:hover {
   background-color: #111;
 }
 
+/* this is for the approval 1st page */
+
+.redtext{
+color:red;
+background-color:blue;
+height:500px;
+width:100%;
+}
+
+.redErrorText{
+color:red;
+
+}
+
 

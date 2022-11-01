@@ -182,13 +182,13 @@ $name = $email = $gender = $comment = $website = "";
 
 comment out oct 30th 2022--end*/
 ?>
-<!--oct 30th 2022 input-->
+<!--oct 30th 2022 input
 <ul>
   <li><a class="active" href="index.php" target="_blank">Home</a></li>
   <li><a href="buying.php" target="_blank">BuyBooks</a></li>
   <li><a href="orders.php" target="_blank">Orders</a></li>
   <li><a href="https://thefriendsnetwork.ca" target="_blank">About</a></li>
-</ul>
+</ul>-->
         <main>
             <div class="container <?php echo $vis1; ?>">
 			<br><br><br>
