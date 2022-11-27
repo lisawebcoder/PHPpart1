@@ -6,6 +6,7 @@
 #robert(2134668)       2022-10-9               see commentsIndex and cheatsheet--i have basic form and css and pics working
 #robert(2134668)       2022-10-29--630am       i added back switch for 3 colors for 3 pages--cntrl + F5 helps me get output i wanted--
 #robert(2134668)       2022-10-31Halloween     i added constants php code
+#nov27th2022 add db folder and file as constants
 #REVISION HISTORY SECTION ends
 //Report all errors except warnings.--oct28th2022
 error_reporting(E_ALL ^ E_WARNING);
