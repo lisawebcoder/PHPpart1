@@ -7,11 +7,31 @@
 #robert(2134668)       2022-10-29--630am       i added back switch for 3 colors for 3 pages--cntrl + F5 helps me get output i wanted--
 #robert(2134668)       2022-10-31Halloween     i added constants php code
 #nov27th2022 add db folder and file as constants--but removed caused issues and added toi the  menu
-#REVISION HISTORY SECTION ends
-//Report all errors except warnings.--oct28th2022
-error_reporting(E_ALL ^ E_WARNING);
-//Only report fatal errors and parse errors.--oct28th2022
-error_reporting(E_ERROR | E_PARSE);
+#dec3rd2022 i added the ajax entry of customers and add and remove functions as a indepant link; need to fix to pdo and need to call procedure syntax from the heidi cuz write now its directly in the pphp the procedure creation--i added it to the tab menu--
+#500pm added another menu item which has dynaic table output as requested in the project and it makes a basic call procdure to a sample test db similar to that for the project and it works and so i need to do this on the project procedures soon
+#dec4th2022--changed href path for menu to login/register to Login.phph
+#added the define condtsnts for the connection to db
+#changed the href link path for the DB orders cutrsotners page i htne menu
+#ADDED ERROR HANdling code
+#NEEDED TO CMMENT OUT DEFINE ERROS IT BREAK MY WEBSITE SO THSTS ENUFF TIME ON THIS
+#i aqdded path in the menu to callData
+##dec5th2022--we put the function serror but the reasomn why we have recusive erros is cuz orders iscalling buying or buying is calling orders
+#yuoyu need to fix this or you csannot include th error code which you need for points 
+#dec6th2022--- added http https code for reditct to secuire https pages for all the website
+##REVISION HISTORY SECTION ends
+
+
+//dec6th2022
+//check if hhtp goes to https
+//var_dump($_SERVER);
+if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on")
+{
+  header('Location: https://' . $_SERVER["HTTP_HOST"]. $_SERVER["REQUEST_URI"]);
+  //teacher put code for ports other than 443 and 80check the reording
+exit();//or die();  
+}
+//dec6th2022
+
 #13th step
 //define constants
 define("FOLDER_PHPSTYLES", "CSS/");
@@ -24,6 +44,41 @@ define("FILE_COKE", FOLDER_PHPPICS . "coke.png");
 define("FILE_7UP", FOLDER_PHPPICS . "7up.png");
 define("FILE_PHPPICS", FOLDER_PHPPICS . "favicon.ico");
 define("FILE_LOGO", FOLDER_PHPPICS . "palmTreeLogo.jpg"); //21/10/2022
+//dec4th2022
+define("FOLDER_DBCONNECT", "Connect/");
+define("FILE_DCONNECT", FOLDER_DBCONNECT . "db.php");
+require_once FILE_DCONNECT;
+//BREAKS MY WEBSITE
+#define("FOLDER_ERRORS", "Errors/");
+#define("FILE_ERRORS", FOLDER_ERRORS . "errors.php");
+#require_once FILE_ERRORS;
+   
+
+
+//dec5th2022 added this--put true to browser but false in the file
+const DEBUGGING = true;
+
+
+
+//Report all errors except warnings.--oct28th2022
+error_reporting(E_ALL ^ E_WARNING);
+//Only report fatal errors and parse errors.--oct28th2022
+error_reporting(E_ERROR | E_PARSE);
+
+//dec4th2022--ERROR CODE
+/* */
+#set_error_handler("manageError");//NOT WROKINHG
+#set_exception_handler("manageException");//NOT WORKING
+header("Expires: Wed, 30 Nov 1994 13:00 GMT");
+header("Cache-Control: no-cache");
+header("Pragma: no-cache");
+header('Content-Type: text/html; charset=UTF-8');
+
+//BREAKS MY WEBSITE
+#define("FOLDER_PROC", "phpmysqlstoredprocedure/");
+#define("FILE_PROC", FOLDER_PROC . "phpmysqlstoredprocedure1.php");
+#require_once FILE_PROC;
+
 
 //4th step
 //1st Main function top--start
@@ -107,14 +162,24 @@ li a:hover {
 
 
         </head>
-        <body class="main">
+        <body class="main">      
+              
+            
+            
+            
+            
+            
+            
       <!--oct 30th 2022 input-->
 <ul>
   <li><a class="active" href="index.php" target="_blank">Home</a></li>
   <li><a href="buying.php" target="_blank">BuyBooks</a></li>
   <li><a href="orders.php" target="_blank">Orders</a></li>
   <li><a href="approval.php" target="_blank">Approval</a></li>
-  <li><a href="Register.php" target="_blank">Login/Register</a></li>
+  <li><a href="Login.php" target="_blank">Login/Register</a></li>
+  <li><a href="http://localhost/Login-Register-PHP-PDO/index.php" target="_blank">Login/Register2</a></li>
+  <!--li><a href="stpcpaIndex.php" target="_blank">Customers</a></li-->
+  <li><a href="callData.php" target="_blank">Statements</a></li>
   <li><a href="https://thefriendsnetwork.ca" target="_blank">About</a></li>
 </ul>   
    <!--oct 30th 2022 input-->          
@@ -201,6 +266,17 @@ function bottomPage() {
     ?>
             <!-- 21/10/2022-->
             <img class="logo" src="<?php echo FILE_LOGO; ?>" alt="WEBSITE LOGO" />
+            
+          
+            
+            
+            
+            
+            
+            
+            
+            
+            
         </body>
     </html> 
 
@@ -305,3 +381,48 @@ function bottomPage() {
 
 #10 comment--end
 ############################################################
+
+        
+        //dec5th2022      
+        
+        //1st ewrror function
+        function manageException($errorObject)
+        {
+            //nov29th2022--i comment out 1st line andf replace it w/ 2nd line
+        // echo "an error in line " .$errorObject->getLine()."of the file" . $errorObject->getFile(). ":"  . $errorObject->getMessage()."(". $errorObject->getCode().")";
+         $detailesError = "an error in line " .$errorObject->getLine()."of the file" . $errorObject->getFile(). ":"  . $errorObject->getMessage()."(". $errorObject->getCode().")";
+           //dec5th2022
+         if (DEBUGGING)
+         {
+             echo $detailesError;
+         }else
+         {
+             echo "an exception occured";
+         }
+         
+            
+          //nov29th2022--dec5th2022 remove the , and put the .
+            file_put_contents("errors.log","an errord happed" . $detailesError);
+            
+            die();  
+        }
+        
+        //2nd eroor fuinction
+        
+          function manageError($errorNumber, $errorString, $errorFile, $errorLineNumber)
+       //added this nov29th2022 an if else block --its ok no crahses
+       {
+       if(DEBUGGING)
+       {    
+                        
+         echo "an error in line $errorLineNumber in the file $errorFile: "  . "$errorString($errorNumber)";
+        
+        }else
+        {
+          echo "an error occurred......."  ;
+        }
+       
+       
+       
+         die();
+        }

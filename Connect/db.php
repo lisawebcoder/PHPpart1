@@ -1,4 +1,7 @@
  <?php
+ #REVISION HISTORY SECTION starts
+#DEVELOPER             DATE(yr/mm/day/                 COMMENTS
+#dec6th2022--added a header location when i looged but it needs to be fixed
 //check if connected to db
 if(isset($_POST['login']))
 {
@@ -25,7 +28,7 @@ $connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
 
 
-echo "connected";
+echo "connected ";
 //nov14th2022
 $username = htmlspecialchars($_POST["username"]);
 $password = htmlspecialchars($_POST["password"]);
@@ -52,7 +55,7 @@ $sqlquery = "SELECT * " .
 
 
 
-  echo $sqlquery;         
+echo $sqlquery;         
 echo "<br><br>";            
 echo $sqlquery . "<br><br>";
 //nov14th2022--i comment out the next  line--
@@ -75,7 +78,8 @@ if ($rows->execute())
    while($row= $rows->fetch())
    {
        #$row["player_passowrd"]--not sure why teachr put this--
-       echo "<br>Welcome " . $row["player_name"] . " the " . $row["class"];
+      #echo "<br>Welcome " . $row["player_name"] . " the " . $row["class"];
+       echo "welcome " . $row["player_name"] . " the " . $row["class"] . " we will now forward you to your account!!";
    }
 }
 
@@ -87,10 +91,13 @@ if ($rows->execute())
 foreach($rows as $row)
 {
     
-   echo "welcome " . $row["player_name"] . " the " . $row["class"];
+   #echo "welcome " . $row["player_name"] . " the " . $row["class"];
+   echo "welcome " . $row["player_name"] . " the " . $row["class"] . "we will now forward you to your account!!";
 }
 
-
+//dec6th2022--but no meesage--the 2nd line of copde works keep it like that for now--
+#header("location: callData.php", true, 303);
+header("Refresh:5;url=https://localhost/2134668/stpcpaIndex.php", true, 303);
 
 }
 ?>

@@ -2,9 +2,10 @@
 #REVISION HISTORY SECTION starts
 #DEVELOPER             DATE(yr/mm/day/                 COMMENTS
 
-#dec4th2022--comment out the pics code dont need here
-#comment out db.php rwquire and dfine db cuz i have it defined in common function
-#
+#dec4th2022--
+#added the connection to the common file and folde
+#line 124 added == 
+#dec5th2022--we jsut did some param testing and i need prepare and excrtute
 ##REVISION HISTORY SECTION ends
 #session_start();
 header('Content-Type:text/html; charset=UTF-8');
@@ -18,7 +19,7 @@ require_once FILE_PHPFUNCTIONS;//dec4th2022--it should still connect cuz i add t
 #require_once FILE_DB;
 
 #4th comment--add functions call
-topPage("Login page");
+topPage("CallData page");
 //i copy the pic code here--halloween 2022
 #$pictures = array(FILE_PEPSI, FILE_COKE, FILE_7UP);
 #shuffle($pictures);
@@ -53,38 +54,44 @@ $error_message = "Incorrect Email or Password!!!";
  
  */
 ?><!DOCTYPE html>
-<!--html lang="en">
-<head>
-<meta charset="UTF-8">
-<title> Login </title>
-
-</head>
-<body>
-<div class="container">
-<div class="row">
-<div class="col-lg-10">
-<div class="page-header">
-<h2>Login </h2>
-</div>
-<p>Please fill all fields in the form</p>
-<form action="<?php //echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-<div class="form-group ">
-<label>Email</label>
-<input type="email" name="email" class="form-control" value="" maxlength="30" required="">
-<span class="text-danger"><?php //if (isset($email_error)) echo $email_error; ?></span>
-</div>
-<div class="form-group">
-<label>Password</label>
-<input type="password" name="password" class="form-control" value="" maxlength="8" required="">
-<span class="text-danger"><?php //if (isset($password_error)) echo $password_error; ?></span>
-</div>  
-<input type="submit" class="btn btn-primary" name="login" value="submit">
-<br>
-You don't have account?<a href="Register.php" class="mt-3">Click Here</a>
-</form>
-</div>
-</div>     
-</div>
-</body>
-</html-->
+<html>
+    <head>
+        <title>PHP MySQL Stored Procedure Demo 1</title>
+        <link rel="stylesheet" href="css/table.css" type="text/css" />
+    </head>
+    <body>
+        <?php
+        require_once 'dbconfig.php';
+        try {
+            $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+            // execute the stored procedure
+            $sql = 'CALL GetCustomers()';
+            // call the stored procedure
+            $q = $pdo->query($sql);
+            $q->setFetchMode(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            die("Error occurred:" . $e->getMessage());
+        }
+        ?>
+        <table>
+            <tr>
+			   <!--th>Customer Number</th-->
+                <th>Contact Last Name</th>
+				<th>Contact First Name</th>
+                <!--th>Phone</th-->
+                <th>Customer Name</th>
+                <th>Credit Limit</th>
+            </tr>
+            <?php while ($r = $q->fetch()): ?>
+                <tr>
+				    <td><?php echo $r['contactFirstName'] ?></td>
+                    <td><?php echo $r['contactLastName'] ?></td>
+					<td><?php echo $r['customerName'] ?></td>
+                    <td><?php echo '$' . number_format($r['creditlimit'], 2) ?>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
+    </body>
+</html>    
 

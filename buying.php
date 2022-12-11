@@ -4,6 +4,8 @@
 #roberto(2134668)      2022-10-07              create a mid term project called 2134668 commit#1
 #roberto(2134668)      2022-10-08              see cheatSheet for many steps did from 10 to 1130am commit#2
 #robert(2134668)       2022-10-9               see commentsIndex and cheatsheet--i have basic form and css and pics working
+
+
 #REVISION HISTORY SECTION ends
 
 
@@ -21,6 +23,7 @@ header('Content-Type:text/html; charset=UTF-8');
 
 
 #Step 2 --define functions file and folder constants
+#//dec5th2022--comment out--2lines--
 define("FOLDER_PHPFUNCTIONS","commonFunctions/");
 define ("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS ."PHPFunctions.php");
 

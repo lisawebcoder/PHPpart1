@@ -1,21 +1,28 @@
 <?php
+#REVISION HISTORY SECTION starts
+#DEVELOPER             DATE(yr/mm/day/                 COMMENTS
+
+#dec4th2022-i removed some define cuz it already in common --so its just like login page
+#need to change register form html and php to pdo stule its mysqli i got mixed up somehow
+##REVISION HISTORY SECTION ends
 header('Content-Type:text/html; charset=UTF-8');
 
 define("FOLDER_PHPFUNCTIONS","commonFunctions/");
 define ("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS ."PHPFunctions.php");
-define("FOLDER_CONNECT", "Connect/");
-define("FILE_DB", FOLDER_CONNECT . "db.php");
+#define("FOLDER_CONNECT", "Connect/");//not needed redundant
+#define("FILE_DB", FOLDER_CONNECT . "db.php");//not needed redundant
 #- call functions w/ reuqire once
 require_once FILE_PHPFUNCTIONS;
-require_once FILE_DB;
+#require_once FILE_DB;//not needed redundant
 
 #4th comment--add functions call
 topPage("Register page");
 //i copy the pic code here--halloween 2022
-$pictures = array(FILE_PEPSI, FILE_COKE, FILE_7UP);
-shuffle($pictures);
-//require_once "db.php";
-if(isset($_SESSION['user_id'])!="") {
+#$pictures = array(FILE_PEPSI, FILE_COKE, FILE_7UP);//not needed here
+#shuffle($pictures);//not needed
+//require_once "db.php";//not needed redundant
+if(isset($_SESSION['user_id'])!="")
+{
 header("Location: index.php");
 }
 if (isset($_POST['signup'])) {
@@ -39,13 +46,15 @@ $mobile_error = "Mobile number must be minimum of 10 characters";
 if($password != $cpassword) {
 $cpassword_error = "Password and Confirm Password doesn't match";
 }
-if(mysqli_query($conn, "INSERT INTO users(name, email, mobile_number ,password) VALUES('" . $name . "', '" . $email . "', '" . $mobile . "', '" . md5($password) . "')")) {
-header("location: login.php");
+if(mysqli_query($connection, "INSERT INTO users(name, email, mobile_number ,password) VALUES('" . $name . "', '" . $email . "', '" . $mobile . "', '" . md5($password) . "')"))
+{
+header("location: Login.php");
 exit();
-} else {
-echo "Error: " . "" . mysqli_error($conn);
+} else
+{
+echo "Error: " . "" . mysqli_error($connection);
 }
-mysqli_close($conn);
+mysqli_close($connection);
 }
 ?>
 <!DOCTYPE html>
