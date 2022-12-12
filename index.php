@@ -5,6 +5,8 @@
 #roberto(2134668)      2022-10-08              see cheatSheet for many steps did from 10 to 1130am commit#2
 #robert(2134668)       2022-10-9               see commentsIndex and cheatsheet--i have basic form and css and pics working
 #robert(2134668)       2022-10-31Halloween     i added some pictures rotate html/php code
+#2134668 dec12th2022 not sure i code from class record will break this page --i will try slowly--
+#but it seems its common code so it goes in the common functions file?
 #REVISION HISTORY SECTION ends
 
 #7th step
@@ -25,6 +27,21 @@ define ("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS ."PHPFunctions.php");
 
 #- call functions w/ reuqire once
 require_once FILE_PHPFUNCTIONS;
+
+
+//dec12th2022start--i will put in common functions
+/*
+const OBJECTS_FOLDER = "Objects/";
+const OBJECT_CUSTOMER = OBJECTS_FOLDER . "customer.php";
+const OBJECT_CUSTOMERS = OBJECTS_FOLDER . "customers.php";
+
+require_once OBJECT_CUSTOMER;
+require_once OBJECT_CUSTOMERS ;
+*/
+//dec12th2022end
+
+
+
 
 #4th comment--add functions call
 topPage("home page");

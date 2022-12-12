@@ -18,6 +18,7 @@
 ##dec5th2022--we put the function serror but the reasomn why we have recusive erros is cuz orders iscalling buying or buying is calling orders
 #yuoyu need to fix this or you csannot include th error code which you need for points 
 #dec6th2022--- added http https code for reditct to secuire https pages for all the website
+#dec12th2022--addeed code line 58 and 180 blocks--no build erros but not getting data from eb DB why?
 ##REVISION HISTORY SECTION ends
 
 
@@ -52,7 +53,21 @@ require_once FILE_DCONNECT;
 #define("FOLDER_ERRORS", "Errors/");
 #define("FILE_ERRORS", FOLDER_ERRORS . "errors.php");
 #require_once FILE_ERRORS;
-   
+
+
+
+ //dec12th2022start
+/**/
+const OBJECTS_FOLDER = "Objects/";
+const OBJECT_CUSTOMER = OBJECTS_FOLDER . "customer.php";
+const OBJECT_CUSTOMERS = OBJECTS_FOLDER . "customers.php";
+
+require_once OBJECT_CUSTOMER;
+require_once OBJECT_CUSTOMERS ;
+
+//dec12th2022end  
+
+
 
 
 //dec5th2022 added this--put true to browser but false in the file
@@ -163,7 +178,56 @@ li a:hover {
 
         </head>
         <body class="main">      
-              
+         <?php
+         //dec12th2022strat
+         
+         $customers = new Customers();
+         //im testing cuz i have no erros but no data output  
+         //var_dump($customers);
+         //exit();
+         //connected object(Customers)#2 (1) { ["items"]=> array(0) { } } --ask teacher--
+         
+         echo "<ol>";
+         foreach($customers->items as $customer)
+         {
+             echo "<li>" . $customer->getName() . "</li>";
+             
+         }
+          echo "</ol>";
+          echo "<br.<br> found " . $customers->count() . " customers in the database en";
+          /**/
+          $myCustomer = new Customer();
+          $validateErrorName = $myCustomer->setName("JackyDec12th2022Test");
+          echo $validateErrorName;
+          //echo $myCustomer->save();--this line gives an error
+          
+           $myCustomer = new Customer();
+           /*--need load() fucntion*/
+           if($myCustomer->load('8fb9fb3c-734e-11ed-b077-a4badba738f3'))
+           {
+               echo "<br>before the update your name is " . $myCustomer->getName();
+               echo $myCustomer->setName("hank AAron");
+               echo "<br>after the update your name is " . $myCustomer->getName();
+               echo $myCustomer->save();
+               echo $myCustomer->delete();
+               
+               
+           }
+           else
+           {
+               //i am getting this output but no runtime biuliod erros but its not getting databse data
+               echo "--cant load this Objects customer--";
+           }
+          
+          
+          
+          
+          
+          
+         
+         
+         //dec12th2022end
+         ?>
             
             
             

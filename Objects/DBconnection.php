@@ -1,6 +1,6 @@
 <?php
 #REVISION HISTORY SECTION starts
-#DEVELOPER             DATE(yr/mm/day/                 COMMENTS
+#DEVELOPER 2134668            DATE(yr/mm/day/                 COMMENTS
 #dec10th2022--adding code teacher explain on dec9th2022 week general rrecord
 
 
@@ -25,4 +25,4 @@ $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
 //check if we connectred to heidi sql root user for en databse--dec10th2022at7pm--no erros
-echo "connected ";
+echo "Objects folder code connected ";

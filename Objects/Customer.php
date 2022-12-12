@@ -3,12 +3,15 @@
 #DEVELOPER             DATE(yr/mm/day/                 COMMENTS
 #dec10th2022--adding code teacher explain on dec9th2022 week general rrecord--but there is constanst code missing
 #this is a very difficult filew to code
-
+#dec12th2022-- i added code to main index.php and added 1 line and comment 2 lines(11,12, 8,9)--cpatolize class name?
+#dec12th2022--it seems load method is missing
 define("OBJECTS_CONNECTION", "DBconnection.php");
 require_once OBJECTS_CONNECTION;
+//dec12th2022--doesnt work
+#const OBJECT_CONNECTION = OBJECTS_FOLDER . "DBconnection.php";
+#require_once OBJECT_CONNECTION;
 
-
-class customer
+class Customer
 {
     
  const NAME_MAX_LENGTH = 30;
@@ -40,6 +43,8 @@ class customer
  
  public function getName()
  {
+     //which one to use?
+    //return strtoupper($this->name); 
     return $this->name; 
  }
     
@@ -64,6 +69,38 @@ class customer
  
  
  
+ //dec12th2022start
+ //load function
+ public function load($customer_id)
+ {
+     global $connection;
+      $SQLquery = 'CALL customers_select_one(:p_customer_id)';
+      $rows = $connection->prepare($SQLquery);
+      $rows->bindParam(":p_customer_id", $customer_id);
+      
+      
+      if($rows->execute())
+      {
+          //teacher has this same warning ; it ina couple of files in objects folder-
+          if($row = $rows->fetch(PDO::FETCH_ASSOC))
+          {
+            $this->customer_id = $row["customker_id"];
+            $this->name = $row["name"];
+          }
+      }
+      
+ }
+       
+ 
+ //dec12th2022end
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ //this is select
  function select ($customer_id)
  {
      
@@ -76,7 +113,7 @@ class customer
    if($rows->execute())
    {
        
-       
+       //why is accidental assignment warning? --ask teacher
        if($row = $rows->fetch())
        {
            $this->customer_id=$row["customer_id"];
@@ -95,7 +132,7 @@ class customer
  {
      
   global $connection;
-  if($this->$customer_id == "")  
+  if($this->customer_id == "")  
   {
      //it seems better to use single quotes then put a : w/ the param name --thats it shoudl work--
       $SQLquery = 'CALL customers_insert(:p_firstname, :p_lastname, :p_city,:p_province, :p_postalcode, :p_username, :p_password, :p_picture, :p_address)';
@@ -124,7 +161,7 @@ class customer
      
     
   
-  
+  //this is delete
   function delete()  
   {
       global $connection;
