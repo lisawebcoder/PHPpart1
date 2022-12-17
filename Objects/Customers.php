@@ -13,7 +13,7 @@ class Customers extends collection
 //main opens
 {
     
-    function __contruct()
+    function __construct()
     //__opens
     {
         global $connection;

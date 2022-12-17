@@ -81,7 +81,8 @@ error_reporting(E_ALL ^ E_WARNING);
 error_reporting(E_ERROR | E_PARSE);
 
 //dec4th2022--ERROR CODE
-/* */
+/* nned to fix orders and buying pages from calling each other
+  or i cant incomment this 2 lines of secutty code*/
 #set_error_handler("manageError");//NOT WROKINHG
 #set_exception_handler("manageException");//NOT WORKING
 header("Expires: Wed, 30 Nov 1994 13:00 GMT");
@@ -203,7 +204,7 @@ li a:hover {
           
            $myCustomer = new Customer();
            /*--need load() fucntion*/
-           if($myCustomer->load('8fb9fb3c-734e-11ed-b077-a4badba738f3'))
+           if($myCustomer->load('19ad5d89-78f1-11ed-b7f0-a4badba738f3'))
            {
                echo "<br>before the update your name is " . $myCustomer->getName();
                echo $myCustomer->setName("hank AAron");

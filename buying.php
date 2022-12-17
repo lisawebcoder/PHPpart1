@@ -54,7 +54,7 @@ error_reporting(E_ERROR | E_PARSE);
 	//this is supposed calculate the order amount?no it doesnt so i need to add a amount formula--oct28th2022
     if (isset($_POST["btnCalculate"])) 
 	{
-		$name    =  htmlspecialchars($_POST["txtName"] )  ;	
+	$name    =  htmlspecialchars($_POST["txtName"] )  ;	
         $size    =  htmlspecialchars($_POST["txtSelect"])  ;
         $flavor  =  htmlspecialchars($_POST["txtFlavor"] );
 		

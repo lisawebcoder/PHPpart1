@@ -27,7 +27,7 @@ require_once FILE_PHPFUNCTIONS;
 error_reporting(E_ALL ^ E_WARNING);
 //Only report fatal errors and parse errors.--oct28th2022
 error_reporting(E_ERROR | E_PARSE);
-//require 'index.php';
+//require 'index.php';----WHY AM I REQURING BOOKS.PHP???--ITS A PROBLEM BUT NOTHE CSS--DEC12TH2022--
 require 'books.php';
 //code from lenovo machine end
 

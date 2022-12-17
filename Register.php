@@ -4,6 +4,7 @@
 
 #dec4th2022-i removed some define cuz it already in common --so its just like login page
 #need to change register form html and php to pdo stule its mysqli i got mixed up somehow
+#dec12th2022--i am commentt out all except maybe ligin link
 ##REVISION HISTORY SECTION ends
 header('Content-Type:text/html; charset=UTF-8');
 
@@ -98,11 +99,11 @@ mysqli_close($connection);
 <span class="text-danger"><?php if (isset($cpassword_error)) echo $cpassword_error; ?></span>
 </div>
 <input type="submit" class="btn btn-primary" name="signup" value="submit">
-Already have a account?<a href="login.php" class="btn btn-default">Login</a>
 </form>
 </div>
 </div>    
 </div>
+    Already have a account?<a href="login.php" class="btn btn-default">Login</a>
 </body>
 </html>
 

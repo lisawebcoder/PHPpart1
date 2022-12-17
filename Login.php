@@ -18,7 +18,7 @@ require_once FILE_PHPFUNCTIONS;//dec4th2022--it should still connect cuz i add t
 #require_once FILE_DB;
 
 #4th comment--add functions call
-topPage("Login page");
+topPage("Login Page");
 //i copy the pic code here--halloween 2022
 #$pictures = array(FILE_PEPSI, FILE_COKE, FILE_7UP);
 #shuffle($pictures);

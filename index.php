@@ -49,6 +49,9 @@ topPage("home page");
 $pictures = array(FILE_PEPSI, FILE_COKE, FILE_7UP);
 shuffle($pictures);
 ?>
+<!-- this is unique html to home page**Dec12th2022**-->
+<p class="home"> home page </p> 
+
 <!-- halloween 2022 i put html pic code here-->
 <img src="<?php echo FILE_REDCAR; ?>"alt="red car" />
 <img class="softdrink" src="<?php echo $pictures[0]; ?>" alt=" Adverts"/>
@@ -57,7 +60,7 @@ shuffle($pictures);
 
 <?php
 echo "<br>";
-echo "refresh the page to see new advert products in browser ";
+echo "refresh the page to see new advert products in browser--we are an online foood delivery and books delivery service ";
          #1st comment
         //intial test block entry
        #8th comment
@@ -66,8 +69,6 @@ echo "refresh the page to see new advert products in browser ";
 #12th comment C contd
 //call the function
 ?>
-<!-- this is unique html to home page-->
-<p class="home"> home page </p> 
 
 <?php
 
