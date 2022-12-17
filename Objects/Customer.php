@@ -88,9 +88,11 @@ class Customer
           {
             $this->customer_id = $row["customker_id"];
             $this->name = $row["name"];
-            //comment out for now 
-            //return true;//dec12th2022--needed this return--
-          }
+            //comment out for now --dec17th2022--why commento ut for now?
+            //dec17th2022--ok it works almost fully but comment out cuz it keeps adding 
+           // return true;//dec12th2022--needed this return--dec17th2022--ok uncomment i added bind parms belwow
+         //dec17th2022--it partially work i get after update putptut but no before and i have delet eroro why? line 230
+            }
       }
       
  }

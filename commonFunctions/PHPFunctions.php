@@ -19,6 +19,7 @@
 #yuoyu need to fix this or you csannot include th error code which you need for points 
 #dec6th2022--- added http https code for reditct to secuire https pages for all the website
 #dec12th2022--addeed code line 58 and 180 blocks--no build erros but not getting data from eb DB why?
+#dec17th2022-- LINE53--i am leaving this commen tout cuz teacher said i will still get points--
 ##REVISION HISTORY SECTION ends
 
 
@@ -49,7 +50,7 @@ define("FILE_LOGO", FOLDER_PHPPICS . "palmTreeLogo.jpg"); //21/10/2022
 define("FOLDER_DBCONNECT", "Connect/");
 define("FILE_DCONNECT", FOLDER_DBCONNECT . "db.php");
 require_once FILE_DCONNECT;
-//BREAKS MY WEBSITE
+//BREAKS MY WEBSITE--dec17th2022-- i am leaving this commen tout cuz teacher said i will still get points--
 #define("FOLDER_ERRORS", "Errors/");
 #define("FILE_ERRORS", FOLDER_ERRORS . "errors.php");
 #require_once FILE_ERRORS;
@@ -183,9 +184,25 @@ li a:hover {
          //dec12th2022strat
          
          $customers = new Customers();
-         //im testing cuz i have no erros but no data output  
-         //var_dump($customers);
-         //exit();
+         //im testing cuz i have no erros but no data output 
+         //DEC17TH2022--TESTING AGAIN CUZ STILL NOT OUTPUT DESPIT BIND PARAM CODE ADDED--sorry for caps--
+         #var_dump($customers);
+         #exit();
+         /* dec17th2022
+          here is the ouptut
+           
+          Objects folder code connected object(Customers)#2 (1) 
+           { ["items"]=> array(3) { ["8fb9fb3c-734e-11ed-b077-a4badba738f3"]=> object(Customer)#4
+           (2) { ["customer_id":"Customer":private]=> string(0) "" 
+          ["name":"Customer":private]=> string(0) "" } 
+          ["f1daf42e-734f-11ed-b077-a4badba738f3"]=> object(Customer)#5 (2) 
+          { ["customer_id":"Customer":private]=> string(0) "" 
+          ["name":"Customer":private]=> string(0) "" 
+          } ["19ad5d89-78f1-11ed-b7f0-a4badba738f3"]=> object(Customer)#6 (2)
+            { ["customer_id":"Customer":private]=> string(0) 
+          "" ["name":"Customer":private]=> string(0) "" } } } 
+          
+          */
          //connected object(Customers)#2 (1) { ["items"]=> array(0) { } } --ask teacher--
          
          echo "<ol>";
@@ -210,7 +227,7 @@ li a:hover {
                echo $myCustomer->setName("hank AAron");
                echo "<br>after the update your name is " . $myCustomer->getName();
                echo $myCustomer->save();
-               echo $myCustomer->delete();
+               //echo $myCustomer->delete();//dec17th2022 comment out fo rnow its gving erros for my deffaylt output
                
                
            }
