@@ -17,8 +17,12 @@ class Customers extends collection
     //__opens
     {
         global $connection;
-       $SQLquery = 'CALL customer_username_Login()';
-        $rows = $connection->prepare($SQLquery);   
+        //dec17th2022--
+       //$SQLquery = 'CALL customer_username_Login(:p_username, :p_password)';
+       #$SQLquery = 'CALL customer_username_Login()';
+       //dec17th2022--230pm--i wqs calling wrong procedure above--why/
+        $SQLquery = 'CALL customers_select()';
+       $rows = $connection->prepare($SQLquery);   
    
    if($rows->execute())
    {
@@ -26,8 +30,8 @@ class Customers extends collection
        
        while($row = $rows->fetch())
        {
-           
-           $customer = new customer($row["customer_id"],$row["username"]);
+           //dec17th2022--i changed uswrname to firstname
+           $customer = new customer($row["customer_id"],$row["firstname"]);
            $this->add($row["customer_id"], $customer);         
            
            

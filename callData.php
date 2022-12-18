@@ -6,6 +6,7 @@
 #added the connection to the common file and folde
 #line 124 added == 
 #dec5th2022--we jsut did some param testing and i need prepare and excrtute
+#dec18th2022-- i change the call proc to point to the en db to see a tbale it works no good output but i need for main
 ##REVISION HISTORY SECTION ends
 #session_start();
 header('Content-Type:text/html; charset=UTF-8');
@@ -65,7 +66,9 @@ $error_message = "Incorrect Email or Password!!!";
         try {
             $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
             // execute the stored procedure
-            $sql = 'CALL GetCustomers()';
+            #$sql = 'CALL GetCustomers()';
+            //dec18thy2022
+              $sql = 'CALL customers_select()';
             // call the stored procedure
             $q = $pdo->query($sql);
             $q->setFetchMode(PDO::FETCH_ASSOC);

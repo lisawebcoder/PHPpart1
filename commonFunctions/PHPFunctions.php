@@ -60,8 +60,9 @@ require_once FILE_DCONNECT;
  //dec12th2022start
 /**/
 const OBJECTS_FOLDER = "Objects/";
-const OBJECT_CUSTOMER = OBJECTS_FOLDER . "customer.php";
-const OBJECT_CUSTOMERS = OBJECTS_FOLDER . "customers.php";
+//dec17th2022--capitilize the names but i dont think it meattaers 12noon--it doesnt matter--
+const OBJECT_CUSTOMER = OBJECTS_FOLDER . "Customer.php";
+const OBJECT_CUSTOMERS = OBJECTS_FOLDER . "Customers.php";
 
 require_once OBJECT_CUSTOMER;
 require_once OBJECT_CUSTOMERS ;
@@ -77,6 +78,7 @@ const DEBUGGING = true;
 
 
 //Report all errors except warnings.--oct28th2022
+//should cooment it normally so that we see important warning sto help out
 error_reporting(E_ALL ^ E_WARNING);
 //Only report fatal errors and parse errors.--oct28th2022
 error_reporting(E_ERROR | E_PARSE);
@@ -190,7 +192,9 @@ li a:hover {
          #exit();
          /* dec17th2022
           here is the ouptut
-           
+          //11am--why ?
+          //Objects folder code connected object(Customers)#2 (1) { ["items"]=> array(0) { } } 
+           //10am
           Objects folder code connected object(Customers)#2 (1) 
            { ["items"]=> array(3) { ["8fb9fb3c-734e-11ed-b077-a4badba738f3"]=> object(Customer)#4
            (2) { ["customer_id":"Customer":private]=> string(0) "" 
@@ -204,31 +208,52 @@ li a:hover {
           
           */
          //connected object(Customers)#2 (1) { ["items"]=> array(0) { } } --ask teacher--
-         
-         echo "<ol>";
+        //dec18th2022--trying to make a table 
+        # echo "<ol>";
+         echo "<table>";
          foreach($customers->items as $customer)
          {
-             echo "<li>" . $customer->getName() . "</li>";
+              #echo "<tr";
+              #//dec18th2022--testing a new customer.php
+             #echo "<li>" . $customer->getName() . "</li>";
+             #//i commet this cuz it takes too much space--dec18th2022
+              #echo "<li>" . $customer->getCustomerId() . "</li>";
+             echo "<li>" . $customer->getUserName() . "</li>";
+             #echo "<th>" . $customer->getName() . "</th>";
+            #echo "<tr>" . $customer->getName() . "</tr>";
+             #echo "</tr>";
              
          }
-          echo "</ol>";
-          echo "<br.<br> found " . $customers->count() . " customers in the database en";
+          #echo "</ol>";
+          echo "</table>";
+          echo "<br><br> found " . $customers->count() . " customers in the database en";
           /**/
           $myCustomer = new Customer();
-          $validateErrorName = $myCustomer->setName("JackyDec12th2022Test");
+          //dec18th2022
+          #$validateErrorName = $myCustomer->setName("JackyDec12th2022Test");
+          $validateErrorName = $myCustomer->setUserName("JackyDec12th2022Test");
           echo $validateErrorName;
           //echo $myCustomer->save();--this line gives an error
           
            $myCustomer = new Customer();
            /*--need load() fucntion*/
            if($myCustomer->load('19ad5d89-78f1-11ed-b7f0-a4badba738f3'))
-           {
+           {/*
+               echo $myCustomer->setName("snackyjacky");
                echo "<br>before the update your name is " . $myCustomer->getName();
                echo $myCustomer->setName("hank AAron");
                echo "<br>after the update your name is " . $myCustomer->getName();
                echo $myCustomer->save();
+            
+            */
                //echo $myCustomer->delete();//dec17th2022 comment out fo rnow its gving erros for my deffaylt output
-               
+               //dec18th2022
+               echo $myCustomer->setUserName("snackyjacky");
+               echo "<br>before the update your name is  " . $myCustomer->getUserName();
+               echo $myCustomer->setUserName("hank AAron ");
+               echo "<br>after the update your name is  " . $myCustomer->getUserName();
+               echo $myCustomer->save();
+               //echo $myCustomer->delete();//dec17th2022 comment out fo rnow its gving erros for my deffaylt output
                
            }
            else

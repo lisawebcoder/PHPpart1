@@ -34,9 +34,13 @@ $username = htmlspecialchars($_POST["username"]);
 $password = htmlspecialchars($_POST["password"]);
 
 
+//dec17th2022
+$sqlquery = 'CALL customer_username_Login(:p_username, :p_password)';
 
-//check if user and pswd are good
-$sqlquery = "SELECT * " .
+
+
+//check if user and pswd are good--//dec17th2022--change name so we an use the call aboeve
+$sqlquery2 = "SELECT * " .
             "FROM players " .
             //"WHERE player_name = 'Joe'" .
             //"AND player_password = 'joe'";
@@ -67,9 +71,11 @@ $rows = $connection->prepare($sqlquery);
 //$rows->bindParam(":username",$_POST["username"], PDO::PARAM_STR);
 //$rows->bindParam(":username",$_POST["username"]);
 //$rows->bindParam(":password",$_POST["password"]);
-$rows->bindParam(":username",$username);
-$rows->bindParam(":password",$password);
-
+#$rows->bindParam(":username",$username);
+#$rows->bindParam(":password",$password);
+//dec17th2022
+$rows->bindParam(":p_username",$username);
+$rows->bindParam(":p_password",$password);
 
 
 if ($rows->execute())
@@ -79,7 +85,9 @@ if ($rows->execute())
    {
        #$row["player_passowrd"]--not sure why teachr put this--
       #echo "<br>Welcome " . $row["player_name"] . " the " . $row["class"];
-       echo "welcome " . $row["player_name"] . " the " . $row["class"] . " we will now forward you to your account!!";
+       //echo "welcome " . $row["player_name"] . " the " . $row["class"] . " we will now forward you to your account!!";
+      //dec17th2022
+       echo "welocome object";
    }
 }
 
@@ -92,7 +100,9 @@ foreach($rows as $row)
 {
     
    #echo "welcome " . $row["player_name"] . " the " . $row["class"];
-   echo "welcome " . $row["player_name"] . " the " . $row["class"] . "we will now forward you to your account!!";
+   //echo "welcome " . $row["player_name"] . " the " . $row["class"] . "we will now forward you to your account!!";
+   //dec17th2022
+      echo "welocome object";
 }
 
 //dec6th2022--but no meesage--the 2nd line of copde works keep it like that for now--
@@ -102,10 +112,10 @@ header("Refresh:5;url=https://localhost/2134668/stpcpaIndex.php", true, 303);
 }
 ?>
 
-
+<!--i changed the resiter forward url on dec18th2022   -->
 <form method="POST">
     username:<input type="text" name="username">
     password:<input type="text" name="password">
     <input type="submit" name="login" value="login here">
-    Dont have a account?<a href="Register.php" class="btn btn-default">Register</a>
+    Dont have a account?<a href="http://localhost/Login-Register-PHP-PDO/index.php" class="btn btn-default">Register</a>
 </form>
