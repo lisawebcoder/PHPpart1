@@ -284,7 +284,7 @@ li a:hover {
   <li><a href="orders.php" target="_blank">Orders</a></li>
   <li><a href="approval.php" target="_blank">Approval</a></li>
   <li><a href="Login.php" target="_blank">Login/Register</a></li>
-  <li><a href="http://localhost/Login-Register-PHP-PDO/index.php" target="_blank">Login/Register2</a></li>
+  <li><a href="http://localhost/Login-Register-PHP-PDO/index.php" target="_blank">SECURELogin/Register</a></li>
   <!--li><a href="stpcpaIndex.php" target="_blank">Customers</a></li-->
   <li><a href="callData.php" target="_blank">Statements</a></li>
   <li><a href="https://thefriendsnetwork.ca" target="_blank">About</a></li>

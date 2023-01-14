@@ -8,9 +8,12 @@ if(isset($_POST['login']))
     
 //for now im using vars but for project use constants
 //$password = "123";
-//$user = "phpme_en";
+//$user//$password = "phpme_en";
+//dec18th2022--testing examUser 
 $password2 = "hello";
-$user2 = "root";
+$user2 = "examUser";
+#$password2 = "hello";
+#$user2 = "root";
 //use contstants for server, user , password, DB--this is just hard coded example--
 //connect using a constructor
 $connection = new PDO("mysql:host=localhost;dbname=en",$user2,$password2);
@@ -119,3 +122,26 @@ header("Refresh:5;url=https://localhost/2134668/stpcpaIndex.php", true, 303);
     <input type="submit" name="login" value="login here">
     Dont have a account?<a href="http://localhost/Login-Register-PHP-PDO/index.php" class="btn btn-default">Register</a>
 </form>
+<?php
+//dec18th2022
+//add passs word hash code to login
+
+
+// put your code here
+        //put these in the final project--i dont kno where to put it thogh-
+/*I COMMENT OUT CUZ IT SHOWS THE PASSWORD BUT IT WORKS THIS CODE BUT MY ADABANCED LOGIN/REGISTER DOES IT ALL
+        $mypassword = 'abc';
+        echo "my password is " . password_hash($mypassword,PASSWORD_DEFAULT);
+        #vefiry passwrod
+        if(password_verify('abc','$2y$10$FGlanoj6q1DsCmgs.Vuhhu.ZZu3G2eMG8XADjEi/SxBvnlIl3o7DW'))
+        {
+         echo '<br>';
+         echo ' welcome'  ; 
+        }else
+        {
+         echo 'not valid user'  ; 
+        }
+ 
+ */
+        //----hash the password in php only-
+        ?>
